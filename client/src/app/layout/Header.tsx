@@ -1,0 +1,22 @@
+import { Switch } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+
+interface Props {
+    darkMode: boolean;
+    handleMode: () => void;
+}
+
+export default function Header({darkMode, handleMode}: Props) {
+    return (
+        <AppBar position="static" sx={{ mb: 4}}>
+            <Toolbar>
+                <Typography variant="h6">
+                    RE-STORE
+                </Typography>
+                <Switch checked={darkMode} onChange={handleMode}/>
+            </Toolbar>
+        </AppBar>
+    )
+}
